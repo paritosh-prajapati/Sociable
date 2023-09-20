@@ -1,0 +1,18 @@
+<%= render "shared/navbar"%>
+
+<div class="container d-flex justify-content-evenly mt-4">
+
+  <div class="card p-2 mr-4 shadow-lg mt-4" style="width: 18rem;">
+  
+    <%if @post.post_file.attached?%>
+      <img src="<%= (url_for(@post.post_file)) %>">
+    <%end%>
+
+    <div class="card-body ">  
+      <p class="p-3 mb-2 bg-light text-dark card-text"><%= @post.body%></p>
+    </div>
+
+    <%= link_to "Edit", edit_post_path(@post) %>
+  </div>
+
+</div>
