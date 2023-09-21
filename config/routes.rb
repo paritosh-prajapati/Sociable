@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   devise_scope :user do
     root "devise/sessions#new"
-    resources :posts
+    resources :posts do
+      resources :comments, shallow: true
+    end
   end
-  # resources :posts
+  resources :profiles, only: :show
 end

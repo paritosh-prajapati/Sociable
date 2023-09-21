@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
 
 	def index
-		# @user= User.find_by(id: current_user.id)
-		# @posts= @user.posts.all
-		@posts= Post.all
+		@user= User.find_by(id: current_user.id)
+		@posts= @user.posts.all
 	end
 
 	def new    

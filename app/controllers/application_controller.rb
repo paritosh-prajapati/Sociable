@@ -5,13 +5,13 @@ class ApplicationController < ActionController::Base
 
   private
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-    # devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:username, :email, :password)}
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[avatar name username])
+    # devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :profile_image)}
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[profile_image name username])
   end
 
   def after_sign_in_path_for(users)
     posts_path
   end
-
+  
 end
