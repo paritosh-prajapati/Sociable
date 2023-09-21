@@ -1,11 +1,10 @@
 
-<nav class="navbar navbar-expand-lg bg-primary bg-body-tertiary">
+<nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;">
   <div class="collapse navbar-collapse">
     <a class="navbar-brand">Sociable</a>
     
     <% if user_signed_in? %>
-      <%= link_to "New Post",new_post_path(@post) %>
-      <%= link_to "Profile", profile_path(current_user)%>
+      
       <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-outline-success my-2 my-sm-0" %>
     
     <% else %>

@@ -1,5 +1,6 @@
 module ApplicationHelper
-  def profile_image(user, options={})
+  def user_profile(user, options={})
+    # debugger
     if user.profile_image.attached?
       image_tag user.profile_image
     end
